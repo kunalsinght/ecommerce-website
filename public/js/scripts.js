@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('products')) {
-        fetch('/api/products')
+        fetch('https://ecommerce-website-2-h2bt.onrender.com/api/products')
             .then(response => response.json())
             .then(products => {
                 const productsDiv = document.getElementById('products');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            fetch('/api/login', {
+            fetch('https://ecommerce-website-2-h2bt.onrender.com/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            fetch('/api/signup', {
+            fetch('https://ecommerce-website-2-h2bt.onrender.com/api/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, password })
@@ -75,7 +75,7 @@ function addToCart(productId) {
         window.location.href = 'login.html';
         return;
     }
-    fetch('/api/cart', {
+    fetch('https://ecommerce-website-2-h2bt.onrender.com/api/cart', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token, productId, quantity: 1 })
@@ -93,7 +93,7 @@ function fetchCartItems() {
         window.location.href = 'login.html';
         return;
     }
-    fetch(`/api/cart?token=${token}`)
+    fetch(`https://ecommerce-website-2-h2bt.onrender.com/api/cart?token=${token}`)
         .then(response => response.json())
         .then(cart => {
             const cartItemsDiv = document.getElementById('cart-items');
