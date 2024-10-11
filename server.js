@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost:27017/ecommerce', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://tawarkunalsingh123:kunalsinghtawar@ecommerce.n0crb.mongodb.net/ecomdb?retryWrites=true&w=majority&appName=ecommerce", { useNewUrlParser: true, useUnifiedTopology: true });
 
 const userSchema = new mongoose.Schema({
     name: String,
